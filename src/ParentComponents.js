@@ -1,8 +1,9 @@
-import React, { Component,PureComponent } from 'react'
+import React, { Component } from 'react'
+import MemoComp from './MemoComp'
 import PureComp from './PureComp'
 import RegComp from './RegComp'
 
-export class ParentComponents extends PureComponent {
+export class ParentComponents extends Component {
 
     constructor(props) {
       super(props)
@@ -16,7 +17,7 @@ export class ParentComponents extends PureComponent {
 
         setInterval(()=>{
             this.setState({
-                name:'dady'
+                name:'baby'
             })
         },3000)
     }
@@ -25,8 +26,9 @@ export class ParentComponents extends PureComponent {
     return (
       <div>
           <div>Parent Components</div>
-          <RegComp name={this.state.name} />
-          <PureComp name={this.state.name} />
+          {/* <RegComp name={this.state.name} />
+          <PureComp name={this.state.name} /> */}
+          <MemoComp name={this.state.name} />
           
     </div>
     )
